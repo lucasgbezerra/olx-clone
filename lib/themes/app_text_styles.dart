@@ -1,6 +1,8 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
+import 'app_colors.dart';
+
 class AppTextStyles {
   static final appBarTitle = GoogleFonts.roboto(
     fontSize: 14,
@@ -30,9 +32,15 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: Color(0xFF8304da),
   );
-  static final sectionText = GoogleFonts.roboto(
+  static final purpleSmallText = GoogleFonts.roboto(
     fontSize: 11,
     fontWeight: FontWeight.normal,
     color: Color(0xFF8304da),
+  );
+
+  static final purpleLargeText = GoogleFonts.roboto(
+    color: AppColors.purple,
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
   );
 }
