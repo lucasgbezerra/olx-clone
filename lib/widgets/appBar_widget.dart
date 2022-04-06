@@ -44,13 +44,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return AppBar(
-      leading: GestureDetector(
-        onTap: () {},
-        child: const Icon(
-          Icons.menu,
-          color: AppColors.white,
-        ),
-      ),
       backgroundColor: AppColors.purple,
       actions: [
         _iconButtonTabBar(Icons.search, (){}),
