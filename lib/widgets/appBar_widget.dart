@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:olx_clone/screens/category_page.dart';
 import 'package:olx_clone/themes/app_colors.dart';
 import 'package:olx_clone/themes/app_text_styles.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
   const AppBarWidget({Key? key}) : super(key: key);
 
-  Widget _bottomAppBarButton(size, String text) {
+  Widget _bottomAppBarButton(size, String text, VoidCallback onTap) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
         width: size.width / 3,
@@ -56,9 +57,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
           color: AppColors.white,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            _bottomAppBarButton(size, 'DDD 61 - localização'),
-            _bottomAppBarButton(size, 'Categorias'),
-            _bottomAppBarButton(size, 'Filtros'),
+            _bottomAppBarButton(size, 'DDD 61 - localização',(){}),
+            _bottomAppBarButton(size, 'Categorias', (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> CategoryScreen()));
+            }),
+            _bottomAppBarButton(size, 'Filtros', (){}),
           ]),
         ),
       ),
