@@ -1,17 +1,16 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-
 import 'app_colors.dart';
 
 class AppTextStyles {
   static final appBarTitle = GoogleFonts.roboto(
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
   static final smallRobotoOpaque = GoogleFonts.roboto(
     fontSize: 11,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.normal,
     color: AppColors.grey,
   );
 
