@@ -5,29 +5,19 @@ import 'package:olx_clone/themes/app_text_styles.dart';
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
 
-  Widget _tile({IconData? icon, required String title}) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-          padding:
-              EdgeInsets.fromLTRB(16, title == "Pagamentos" ? 20 : 16, 0, 16),
-          child: Row(
-            children: [
-              icon != null
-                  ? Padding(
-                      padding: const EdgeInsets.only(right: 24),
-                      child: Icon(
-                        icon,
-                        color: AppColors.black,
-                      ),
-                    )
-                  : Container(),
-              Text(
-                title,
-                style: AppTextStyles.blackMidText,
-              ),
-            ],
-          )),
+  Widget _tile({IconData? icon, Image? imageIcon, required String title}) {
+    return ListTile(
+      onTap: (){},
+      leading: icon != null
+          ? Icon(
+              icon,
+              color: AppColors.black,
+            )
+          : imageIcon ?? null,
+      title: Text(
+        title,
+        style: AppTextStyles.blackMidText,
+      ),
     );
   }
 
@@ -74,7 +64,13 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ),
             ),
-            _tile(icon: Icons.edit, title: "Anúncios"),
+            _tile(
+                imageIcon: Image.asset(
+                  'assets/olx-logo.png',
+                  width: 24,
+                  height: 24,
+                ),
+                title: "Anúncios"),
             _tile(icon: Icons.edit, title: "Inserir Anúncio"),
             _tile(icon: Icons.notifications_outlined, title: "Notificações"),
             _tile(icon: Icons.chat_bubble_outline, title: "chat"),
