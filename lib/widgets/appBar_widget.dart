@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:olx_clone/screens/category_page.dart';
+import 'package:olx_clone/screens/localization_page.dart';
 import 'package:olx_clone/themes/app_colors.dart';
 import 'package:olx_clone/themes/app_text_styles.dart';
 
-class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({Key? key}) : super(key: key);
 
   Widget _bottomAppBarButton(size, String text, VoidCallback onTap) {
@@ -47,9 +48,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
     return AppBar(
       backgroundColor: AppColors.purple,
       actions: [
-        _iconButtonTabBar(Icons.search, (){}),
-        _iconButtonTabBar(Icons.notifications, (){}),
-        _iconButtonTabBar(Icons.favorite_outline, (){}),
+        _iconButtonTabBar(Icons.search, () {}),
+        _iconButtonTabBar(Icons.notifications, () {}),
+        _iconButtonTabBar(Icons.favorite_outline, () {}),
       ],
       bottom: PreferredSize(
         preferredSize: Size(size.width, 40),
@@ -57,11 +58,15 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
           color: AppColors.white,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            _bottomAppBarButton(size, 'DDD 61 - localização',(){}),
-            _bottomAppBarButton(size, 'Categorias', (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> CategoryScreen()));
+            _bottomAppBarButton(size, 'DDD 61 - localização', () {
+               Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => LocalizationPage()));
             }),
-            _bottomAppBarButton(size, 'Filtros', (){}),
+            _bottomAppBarButton(size, 'Categorias', () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => CategoryScreen()));
+            }),
+            _bottomAppBarButton(size, 'Filtros', () {}),
           ]),
         ),
       ),
@@ -69,6 +74,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
   }
 
   @override
-  
   Size get preferredSize => Size.fromHeight(100);
 }
