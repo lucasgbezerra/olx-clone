@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:olx_clone/themes/app_colors.dart';
 import 'package:olx_clone/themes/app_text_styles.dart';
+import 'package:olx_clone/widgets/list_tile_widget.dart';
 
 class CategoryScreen extends StatelessWidget {
   CategoryScreen({Key? key}) : super(key: key);
@@ -30,41 +31,7 @@ class CategoryScreen extends StatelessWidget {
       ),
       body: ListView(
         children: categories.entries.map((e) {
-          return InkWell(
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: AppColors.grey,
-                    width: 0.5,
-                  ),
-                ),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 16),
-                        child: e.key == "Todas as categorias"
-                            ? e.value
-                            : Icon(
-                                e.value,
-                                color: AppColors.grey,
-                              ),
-                      ),
-                      Text(
-                        e.key,
-                        style: AppTextStyles.smallRobotoOpaque,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          );
+          return ListTileWidget(icon: e.value , text: e.key);
         }).toList(),
       ),
     );
