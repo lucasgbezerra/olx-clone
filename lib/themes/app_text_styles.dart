@@ -30,10 +30,10 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
-  static final btnOutilinedText = GoogleFonts.roboto(
+  static final greyMidText = GoogleFonts.roboto(
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    color: const Color(0xFF4e4e4f),
+    color: AppColors.grey,
   );
 
   static final btnOutilinedTextPurple = GoogleFonts.roboto(
@@ -47,6 +47,12 @@ class AppTextStyles {
     color: AppColors.purple,
   );
 
+  static final purpleMidBoldText = GoogleFonts.roboto(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: AppColors.purple,
+  );
+
   static final purpleLargeText = GoogleFonts.roboto(
     color: AppColors.purple,
     fontWeight: FontWeight.normal,
@@ -55,6 +61,11 @@ class AppTextStyles {
   static final blackMidText = GoogleFonts.roboto(
     fontSize: 12,
     fontWeight: FontWeight.w500,
+    color: AppColors.black
+  );
+  static final blackMidBoldText = GoogleFonts.roboto(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
     color: AppColors.black
   );
 }
