@@ -15,7 +15,7 @@ class AppTextStyles {
   );
 
   static final btnFillText = GoogleFonts.roboto(
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: FontWeight.w500,
     color: Colors.white,
   );
@@ -33,7 +33,7 @@ class AppTextStyles {
   static final btnOutilinedText = GoogleFonts.roboto(
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    color: Color(0xFF4e4e4f),
+    color: const Color(0xFF4e4e4f),
   );
 
   static final btnOutilinedTextPurple = GoogleFonts.roboto(

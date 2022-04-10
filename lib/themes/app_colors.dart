@@ -7,4 +7,6 @@ class AppColors {
   static const orange = Color(0xFFfe8100);
   static const grey = Color(0xFF86808a);
   static const black = Color(0xFF212121);
+  static const facebookBlue = Color(0xFF3c5c9c);
+  static const googleBlue = Color(0xFF008dd2);
 }
