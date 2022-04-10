@@ -64,7 +64,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             }),
             _bottomAppBarButton(size, 'Categorias', () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => CategoryScreen()));
+                  MaterialPageRoute(builder: (context) => CategoryPage()));
             }),
             _bottomAppBarButton(size, 'Filtros', () {}),
           ]),
