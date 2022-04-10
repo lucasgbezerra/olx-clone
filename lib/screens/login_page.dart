@@ -1,55 +1,17 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:olx_clone/themes/app_colors.dart';
 import 'package:olx_clone/themes/app_text_styles.dart';
+import 'package:olx_clone/widgets/buttons/rounded_button_widget.dart';
+import 'package:olx_clone/widgets/input_text_widget.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
-  Widget _filledButton(
-      {Image? icon,
-      required String label,
-      required Color color,
-      required VoidCallback onTap}) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        height: 50,
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        margin: EdgeInsets.only(top: 8),
-        decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.circular(30)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            icon ?? SizedBox.shrink(),
-            Expanded(
-              child:
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text(
-                  label,
-                  style: AppTextStyles.btnFillText,
-                )
-              ]),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _inputText(bool isObscure) {
-    return TextField(
-      obscureText: isObscure,
-      decoration: InputDecoration(
-        suffixIcon: isObscure ? Icon(Icons.visibility) : null,
-        suffixIconColor: AppColors.grey,
-        border: OutlineInputBorder(),
-      ),
-    );
-  }
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(color: AppColors.white),
@@ -60,17 +22,17 @@ class LoginPage extends StatelessWidget {
         backgroundColor: AppColors.purple,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
         child: Column(
           children: [
-            _filledButton(
+            RoundedButtonWidget(
               icon: Image.asset('assets/facebook-icon.png',
                   height: 30, width: 30),
               label: "Entrar com o Facebook",
               color: AppColors.facebookBlue,
               onTap: () {},
             ),
-            _filledButton(
+            RoundedButtonWidget(
               icon:
                   Image.asset('assets/google-icon.png', height: 30, width: 30),
               label: "Entrar com o Google",
@@ -92,7 +54,7 @@ class LoginPage extends StatelessWidget {
                 style: AppTextStyles.blackMidBoldText,
               ),
             ),
-            _inputText(false),
+            InputTextWidget(isObscure: false, controller: emailController),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Row(
@@ -112,23 +74,23 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            _inputText(true),
-            _filledButton(
+            InputTextWidget(isObscure: true, controller: passwordController,),
+            RoundedButtonWidget(
               label: "Entrar",
               color: AppColors.orange,
               onTap: () {},
             ),
             SizedBox(height: 20),
+            // Texto composto com parte do texto clicavel utilizando o widget TapGestureRecognizer()
             Text.rich(TextSpan(
-              text: "Não tem conta? ", 
-              style: AppTextStyles.greyMidText,
-              children: [
-                TextSpan(
-                  text: "Cadastre-se",
-                  style: AppTextStyles.purpleMidBoldText
-                )
-              ]
-            ))
+                text: "Não tem conta? ",
+                style: AppTextStyles.greyMidText,
+                children: [
+                  TextSpan(
+                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      text: "Cadastre-se",
+                      style: AppTextStyles.purpleMidBoldText)
+                ]))
           ],
         ),
       ),
