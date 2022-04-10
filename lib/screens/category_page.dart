@@ -3,8 +3,8 @@ import 'package:olx_clone/themes/app_colors.dart';
 import 'package:olx_clone/themes/app_text_styles.dart';
 import 'package:olx_clone/widgets/list_tile_widget.dart';
 
-class CategoryScreen extends StatelessWidget {
-  CategoryScreen({Key? key}) : super(key: key);
+class CategoryPage extends StatelessWidget {
+  CategoryPage({Key? key}) : super(key: key);
 
   final Map<String, dynamic> categories = {
     'Todas as categorias': Image.asset(
