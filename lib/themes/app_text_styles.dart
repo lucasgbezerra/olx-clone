@@ -48,7 +48,7 @@ class AppTextStyles {
   );
 
   static final purpleMidBoldText = GoogleFonts.roboto(
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: FontWeight.bold,
     color: AppColors.purple,
   );
@@ -64,7 +64,7 @@ class AppTextStyles {
     color: AppColors.black
   );
   static final blackMidBoldText = GoogleFonts.roboto(
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: FontWeight.bold,
     color: AppColors.black
   );
