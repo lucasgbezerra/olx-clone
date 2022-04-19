@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:olx_clone/themes/app_colors.dart';
 import 'package:olx_clone/themes/app_text_styles.dart';
 import 'package:olx_clone/widgets/buttons/rounded_button_widget.dart';
-import 'package:olx_clone/widgets/input_text_widget.dart';
+import 'package:olx_clone/widgets/inputs/input_password_widget.dart';
+import 'package:olx_clone/widgets/inputs/input_text_widget.dart';
 
 class LoginPage extends StatelessWidget {
   final emailController = TextEditingController();
@@ -46,35 +47,17 @@ class LoginPage extends StatelessWidget {
                 style: AppTextStyles.smallRobotoOpaque,
               ),
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                "E-mail",
-                style: AppTextStyles.blackMidBoldText,
-              ),
-            ),
-            InputTextWidget(isObscure: false, controller: emailController),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Senha",
-                    style: AppTextStyles.blackMidBoldText,
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      "Esqueceu sua senha?",
-                      style: AppTextStyles.purpleMidBoldText,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            InputTextWidget(isObscure: true, controller: passwordController,),
+            // Container(
+            //   alignment: Alignment.centerLeft,
+            //   padding: const EdgeInsets.symmetric(vertical: 8.0),
+            //   child: Text(
+            //     "E-mail",
+            //     style: AppTextStyles.blackMidBoldText,
+            //   ),
+            // ),
+            InputTextWidget(title:"E-mail", isObscure: false, controller: emailController),
+
+            InputPasswordWidget(isObscure: true, controller: passwordController,),
             RoundedButtonWidget(
               label: "Entrar",
               color: AppColors.orange,
