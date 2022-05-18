@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:olx_clone/screens/home_page.dart';
+import 'package:olx_clone/screens/register_announcement_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'OLX clone',  
-      home: HomePage(),
+      home: RegisterAnnouncementPage(),
     );
   }
 }

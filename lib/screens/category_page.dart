@@ -23,7 +23,9 @@ class CategoryPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.purple,
-        leading: BackButton(color: AppColors.white),
+        leading: BackButton(
+          onPressed: () => Navigator.of(context).pop(),
+          color: AppColors.white),
         title: Text(
           "Todas as categorias",
           style: AppTextStyles.appBarTitle,

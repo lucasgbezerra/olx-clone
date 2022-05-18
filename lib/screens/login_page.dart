@@ -55,7 +55,7 @@ class LoginPage extends StatelessWidget {
             //     style: AppTextStyles.blackMidBoldText,
             //   ),
             // ),
-            InputTextWidget(title:"E-mail", isObscure: false, controller: emailController),
+            InputTextWidget(title:"E-mail", controller: emailController),
 
             InputPasswordWidget(isObscure: true, controller: passwordController,),
             RoundedButtonWidget(
