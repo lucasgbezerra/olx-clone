@@ -5,8 +5,15 @@ import 'package:olx_clone/themes/app_text_styles.dart';
 class InputTextWidget extends StatelessWidget {
   final TextEditingController controller;
   final String title;
+  final int lines;
+  final String? hintText;
+  final TextInputType? keyboardType;
+  final double? width;
   const InputTextWidget(
-      {Key? key, required this.controller, required this.title})
+      {Key? key,
+      required this.controller,
+      required this.title,
+      required this.lines, this.hintText = "", this.keyboardType, this.width})
       : super(key: key);
 
   @override
@@ -21,19 +28,25 @@ class InputTextWidget extends StatelessWidget {
             style: AppTextStyles.blackMidBoldText,
           ),
         ),
-        TextField(
-          controller: controller,
-          decoration: InputDecoration(
-            enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: AppColors.grey,
-                width: 0.7,
+        Container(
+          width: width,
+          child: TextField(
+            maxLines: lines,
+            keyboardType: keyboardType,
+            controller: controller,
+            decoration: InputDecoration(
+              hintText: hintText,
+              enabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColors.grey,
+                  width: 0.7,
+                ),
               ),
-            ),
-            border: const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: AppColors.purple,
-                width: 0.7,
+              border: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColors.purple,
+                  width: 0.7,
+                ),
               ),
             ),
           ),

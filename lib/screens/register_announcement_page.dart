@@ -69,8 +69,26 @@ class RegisterAnnouncementPage extends StatelessWidget {
 
             InputTextWidget(
               title: "Título do Anúncio*",
+              // height: 30,
+              hintText: "Ex: Smartphone Samsung Galaxy S22 128GB Preto 5G",
+              lines: 1,
               controller: TextEditingController(),
-            )
+            ),
+            InputTextWidget(
+              title: "Descrição*",
+              // height: 30,
+              hintText:
+                  "Ex:Tenha todos os seus compromissos e aplicativos úteis na palma da sua mão, sem deixar nada para trás com o S22 Galaxy da Samsung.",
+              lines: 7,
+              controller: TextEditingController(),
+            ),
+            InputTextWidget(
+              title: "CEP*",
+              keyboardType: TextInputType.number,
+              width: size.width/2,
+              lines: 1,
+              controller: TextEditingController(),
+            ),
           ],
         ),
       ),
