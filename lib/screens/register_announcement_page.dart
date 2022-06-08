@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:olx_clone/themes/app_colors.dart';
 import 'package:olx_clone/themes/app_text_styles.dart';
+import 'package:olx_clone/widgets/buttons/rounded_button_widget.dart';
 import 'package:olx_clone/widgets/inputs/input_text_widget.dart';
 
 class RegisterAnnouncementPage extends StatelessWidget {
@@ -66,7 +67,6 @@ class RegisterAnnouncementPage extends StatelessWidget {
                 ],
               ),
             ),
-
             InputTextWidget(
               title: "Título do Anúncio*",
               // height: 30,
@@ -89,6 +89,7 @@ class RegisterAnnouncementPage extends StatelessWidget {
               lines: 1,
               controller: TextEditingController(),
             ),
+            RoundedButtonWidget(label: "Enviar", color: AppColors.orange, onTap: (){}),
           ],
         ),
       ),
